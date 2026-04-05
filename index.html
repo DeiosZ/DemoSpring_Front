@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TodoList App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- TOAST -->
+  <div id="toast-container"></div>
+
+  <!-- MODAL CONFIRM -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <p class="modal-text" id="modal-text">¿Estás seguro?</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancelar</button>
+        <button class="btn btn-danger" id="modal-confirm">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">◈</span>
+        <span class="brand-name">Tareas</span>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-btn active" onclick="showView('usuarios')">
+          <span class="nav-icon">⊞</span> Usuarios
+        </button>
+        <button class="nav-btn" onclick="showView('nuevo-usuario')">
+          <span class="nav-icon">＋</span> Nuevo usuario
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="api-status">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Conectando...</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- VIEW: USUARIOS -->
+      <section class="view active" id="view-usuarios">
+        <div class="view-header">
+          <h1 class="view-title">Usuarios <span id="users-count" class="count-badge">0</span></h1>
+          <p class="view-sub">Selecciona una tarjeta para ver sus tareas</p>
+        </div>
+        <div class="users-grid" id="users-grid">
+          <div class="loading-state">Cargando usuarios...</div>
+        </div>
+      </section>
+
+      <!-- VIEW: NUEVO USUARIO -->
+      <section class="view" id="view-nuevo-usuario">
+        <div class="view-header">
+          <h1 class="view-title">Nuevo usuario</h1>
+          <p class="view-sub">Agrega un nuevo integrante al sistema</p>
+        </div>
+        <div class="form-card">
+          <div class="field">
+            <label>Nombre completo</label>
+            <input type="text" id="u-nombre" placeholder="Ej: Vladimir García" />
+          </div>
+          <div class="field">
+            <label>Correo electrónico</label>
+            <input type="email" id="u-email" placeholder="vladimir@email.com" />
+          </div>
+          <button class="btn btn-primary" onclick="crearUsuario()">Crear usuario</button>
+        </div>
+      </section>
+
+      <!-- VIEW: TAREAS DE USUARIO -->
+      <section class="view" id="view-tareas">
+        <div class="view-header">
+          <button class="back-btn" onclick="showView('usuarios')">← Volver</button>
+          <div>
+            <h1 class="view-title" id="tareas-user-name">Tareas</h1>
+            <p class="view-sub" id="tareas-user-email"></p>
+          </div>
+        </div>
+
+        <!-- Nueva tarea -->
+        <div class="nueva-tarea-bar">
+          <input type="text" id="t-titulo" placeholder="Título de la tarea..." class="tarea-input"/>
+          <input type="text" id="t-desc" placeholder="Descripción (opcional)" class="tarea-input"/>
+          <button class="btn btn-primary" onclick="crearTarea()">＋ Agregar</button>
+        </div>
+
+        <!-- Lista de tareas -->
+        <div id="tareas-list" class="tareas-list"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
