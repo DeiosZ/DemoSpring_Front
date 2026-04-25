@@ -14,7 +14,7 @@ async function cargarProyectos() {
   const userId = localStorage.getItem("userId");
 
   if (!userId) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -74,7 +74,7 @@ function verTareas(proyectoId) {
 
 function logout() {
   localStorage.clear();
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 // ========================

@@ -85,5 +85,5 @@ function validarEmail(email) {
 }
 
 function volverLogin() {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
