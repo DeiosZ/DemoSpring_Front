@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyectos</title>
+    <link rel="stylesheet" href="css/proyectos.css">
+</head>
+<body>
+
+<div class="header">
+    <h2>Mis Proyectos</h2>
+    <button class="logout" onclick="logout()">Cerrar sesión</button>
+</div>
+
+<div class="acciones">
+    <button onclick="mostrarFormulario()">+ Crear Proyecto</button>
+</div>
+
+<!-- FORM -->
+<div id="formProyecto" class="form hidden">
+
+    <h3 id="tituloForm">Nuevo Proyecto</h3>
+
+    <input type="text" id="name" placeholder="Nombre">
+    <input type="text" id="description" placeholder="Descripción">
+    <input type="text" id="color" placeholder="Color (#FF0000)">
+    <input type="text" id="image" placeholder="URL Imagen">
+
+    <label>Tags</label>
+    <select id="tag" multiple></select>
+
+    <div class="form-buttons">
+        <button id="btnGuardar" onclick="crearProyecto()">Guardar</button>
+        <button class="secondary" onclick="ocultarFormulario()">Cancelar</button>
+    </div>
+
+    <p id="mensaje"></p>
+
+</div>
+
+<!-- LISTA -->
+<div id="proyectos" class="grid"></div>
+
+<script src="js/proyectos.js"></script>
+</body>
+</html>

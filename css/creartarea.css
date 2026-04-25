@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+}
+
+input, textarea, select {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.secondary {
+    background: #ccc;
+    color: black;
+}
+
+#mensaje {
+    margin-top: 10px;
+    font-size: 14px;
+}

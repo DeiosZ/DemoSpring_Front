@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Tarea</title>
+    <link rel="stylesheet" href="css/editartarea.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>Editar Tarea</h2>
+
+        <form id="formEditar">
+
+            <input type="text" id="name" placeholder="Nombre" required>
+
+            <textarea id="description" placeholder="Descripción"></textarea>
+
+            <label>Fecha inicio</label>
+            <input type="datetime-local" id="startAt">
+
+            <label>Prioridad</label>
+            <select id="prioridad"></select>
+
+            <label>Tags</label>
+            <div id="tags" class="tags-container"></div>
+
+            <button id="btnGuardar" type="submit">Guardar cambios</button>
+            <button type="button" class="secondary" onclick="volver()">Volver</button>
+
+            <p id="mensaje"></p>
+
+        </form>
+    </div>
+</div>
+
+<script src="js/editartarea.js"></script>
+</body>
+</html>

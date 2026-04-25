@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Crear cuenta</h2>
+
+    <form id="formRegistro">
+
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+
+        <button type="submit" id="btnRegistrar">Registrarse</button>
+        <button type="button" class="secondary" onclick="volverLogin()">Volver</button>
+
+        <p id="mensaje"></p>
+
+    </form>
+</div>
+
+<script src="js/register.js"></script>
+</body>
+</html>
