@@ -145,14 +145,14 @@ document.getElementById("formEditar").addEventListener("submit", async (e) => {
 
         if (!res.ok) throw new Error();
 
-        mostrarMensaje("Tarea actualizada ✏️");
+        mostrarMensaje("Tarea actualizada ");
 
         setTimeout(() => {
             window.location.href = "tareas.html";
         }, 1000);
 
     } catch {
-        mostrarMensaje("Error al actualizar ❌", "red");
+        mostrarMensaje("Error al actualizar ", "red");
     } finally {
         btn.disabled = false;
         btn.textContent = "Guardar cambios";
