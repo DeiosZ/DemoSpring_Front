@@ -57,7 +57,7 @@ async function registrar(e) {
         } else {
             const error = await response.text();
 
-            // 🔹 personaliza si backend responde algo específico
+            // personaliza si backend responde algo específico
             if (error.includes("email")) {
                 mostrarMensaje("El email ya está registrado", "red");
             } else {
@@ -85,5 +85,5 @@ function validarEmail(email) {
 }
 
 function volverLogin() {
-    window.location.href = "index.html";
+    window.location.href = "./index.html";
 }
